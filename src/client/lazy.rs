@@ -83,7 +83,7 @@ impl<'a, E: Error> Error for LazyError<'a, E> {
         self.error.description()
     }
 
-    fn cause(&self) -> Option<&Error> {
+    fn cause(&self) -> Option<&dyn Error> {
         Some(&self.error)
     }
 }
@@ -219,7 +219,7 @@ impl<'n, 'd> fmt::Debug for Data<'n, 'd> {
 struct Stream<'n, 'd> {
     filename: Option<Cow<'n, str>>,
     content_type: Mime,
-    stream: Box<Read + 'd>,
+    stream: Box<dyn Read + 'd>,
 }
 
 /// The result of [`Multipart::prepare()`](struct.Multipart.html#method.prepare).
@@ -337,7 +337,7 @@ impl<'d> Read for PreparedFields<'d> {
 
 struct PreparedField<'d> {
     header: Cursor<Vec<u8>>,
-    stream: Box<Read + 'd>,
+    stream: Box<dyn Read + 'd>,
 }
 
 impl<'d> PreparedField<'d> {
@@ -354,7 +354,7 @@ impl<'d> PreparedField<'d> {
         Ok((stream, content_len))
     }
 
-    fn from_stream(name: &str, boundary: &str, content_type: &Mime, filename: Option<&str>, stream: Box<Read + 'd>) -> Self {
+    fn from_stream(name: &str, boundary: &str, content_type: &Mime, filename: Option<&str>, stream: Box<dyn Read + 'd>) -> Self {
         let mut header = Vec::new();
 
         write!(header, "{}\r\nContent-Disposition: form-data; name=\"{}\"",

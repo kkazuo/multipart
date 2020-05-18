@@ -11,8 +11,8 @@ use super::HttpRequest;
 use std::io::Read;
 
 impl<'r> HttpRequest for &'r mut TinyHttpRequest {
-    type Body = &'r mut Read;
-    
+    type Body = &'r mut dyn Read;
+
     fn multipart_boundary(&self) -> Option<&str> {
         const BOUNDARY: &str = "boundary=";
 
