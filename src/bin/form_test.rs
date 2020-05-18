@@ -1,7 +1,7 @@
 extern crate hyper;
-extern crate multipart;
+extern crate multipart_any;
 
-use multipart::server::Multipart;
+use multipart_any::server::Multipart;
 
 use hyper::header::ContentType;
 use hyper::server::*;
