@@ -1,4 +1,8 @@
-# Multipart [![Build Status](https://travis-ci.org/abonander/multipart.svg?branch=master)](https://travis-ci.org/abonander/multipart) [![On Crates.io](https://img.shields.io/crates/v/multipart.svg)](https://crates.io/crates/multipart)
+Forked from [Multipart](https://crates.io/crates/multipart).
+
+For parse any multipart/* type stream.
+
+# Multipart [![On Crates.io](https://img.shields.io/crates/v/multipart-any.svg)](https://crates.io/crates/multipart-any)
 
 Client- and server-side abstractions for HTTP file uploads (POST requests with  `Content-Type: multipart/form-data`).
 
@@ -7,7 +11,7 @@ Supports several different (**sync**hronous API) HTTP crates.
 
 Minimum supported Rust version: 1.24.1
 
-### [Documentation](http://docs.rs/multipart/)
+### [Documentation](http://docs.rs/multipart-any/)
 
 ## Integrations
 
