@@ -78,7 +78,7 @@ use rand::Rng;
 /// Chain a series of results together, with or without previous results.
 ///
 /// ```
-/// #[macro_use] extern crate multipart;
+/// #[macro_use] extern crate multipart_any;
 ///
 /// fn try_add_one(val: u32) -> Result<u32, u32> {
 ///     if val < 5 {

@@ -1,10 +1,10 @@
 extern crate iron;
-extern crate multipart;
+extern crate multipart_any;
 
 use iron::prelude::*;
 
-use multipart::server::Entries;
-use multipart::server::iron::Intercept;
+use multipart_any::server::Entries;
+use multipart_any::server::iron::Intercept;
 
 fn main() {
     // We start with a basic request handler chain.

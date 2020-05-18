@@ -5,14 +5,14 @@
 #![feature(proc_macro_hygiene, decl_macro)]
 #![feature(plugin, custom_attribute)]
 
-extern crate multipart;
+extern crate multipart_any;
 #[macro_use]
 extern crate rocket;
 
-use multipart::mock::StdoutTee;
-use multipart::server::Multipart;
-use multipart::server::save::Entries;
-use multipart::server::save::SaveResult::*;
+use multipart_any::mock::StdoutTee;
+use multipart_any::server::Multipart;
+use multipart_any::server::save::Entries;
+use multipart_any::server::save::SaveResult::*;
 
 use rocket::Data;
 use rocket::http::{ContentType, Status};

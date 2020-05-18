@@ -1,8 +1,8 @@
 #[macro_use] extern crate log;
-extern crate multipart;
+extern crate multipart_any;
 extern crate rand;
 
-use multipart::server::Multipart;
+use multipart_any::server::Multipart;
 
 use rand::{Rng, ThreadRng};
 

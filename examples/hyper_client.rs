@@ -1,11 +1,11 @@
 extern crate hyper;
-extern crate multipart;
+extern crate multipart_any;
 
 use hyper::client::Request;
 use hyper::method::Method;
 use hyper::net::Streaming;
 
-use multipart::client::Multipart;
+use multipart_any::client::Multipart;
 
 use std::io::Read;
 

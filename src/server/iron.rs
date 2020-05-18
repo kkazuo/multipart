@@ -48,12 +48,12 @@ pub const DEFAULT_FILE_COUNT_LIMIT: u32 = 16;
 ///
 /// ```no_run
 /// extern crate iron;
-/// extern crate multipart;
+/// extern crate multipart_any;
 ///
 /// use iron::prelude::*;
 ///
-/// use multipart::server::Entries;
-/// use multipart::server::iron::Intercept;
+/// use multipart_any::server::Entries;
+/// use multipart_any::server::iron::Intercept;
 ///
 /// fn main() {
 ///     let mut chain = Chain::new(|req: &mut Request| if let Some(entries) =

@@ -1,11 +1,11 @@
-extern crate multipart;
+extern crate multipart_any;
 extern crate iron;
 
 extern crate env_logger;
 
 use std::io::{self, Write};
-use multipart::mock::StdoutTee;
-use multipart::server::{Multipart, Entries, SaveResult};
+use multipart_any::mock::StdoutTee;
+use multipart_any::server::{Multipart, Entries, SaveResult};
 use iron::prelude::*;
 use iron::status;
 

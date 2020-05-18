@@ -1,13 +1,13 @@
-extern crate multipart;
+extern crate multipart_any;
 extern crate nickel;
 
 use std::io::{self, Write};
 use nickel::{Action, HttpRouter, MiddlewareResult, Nickel, Request, Response};
 use nickel::status::StatusCode;
 
-use multipart::server::nickel::MultipartBody;
-use multipart::server::{Entries, SaveResult};
-use multipart::mock::StdoutTee;
+use multipart_any::server::nickel::MultipartBody;
+use multipart_any::server::{Entries, SaveResult};
+use multipart_any::mock::StdoutTee;
 
 fn handle_multipart<'mw>(req: &mut Request, mut res: Response<'mw>) -> MiddlewareResult<'mw> {
     match (*req).multipart_body() {

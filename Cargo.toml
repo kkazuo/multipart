@@ -17,6 +17,9 @@ license = "MIT OR Apache-2.0"
 
 readme = "README.md"
 
+autobins = false
+edition = "2015"
+
 [dependencies]
 lazy_static = { version = "1.2.0", optional = true }
 log = "0.4"

@@ -1,9 +1,9 @@
 extern crate tiny_http;
-extern crate multipart;
+extern crate multipart_any;
 
 use std::io::{self, Cursor, Write};
-use multipart::server::{Multipart, Entries, SaveResult};
-use multipart::mock::StdoutTee;
+use multipart_any::server::{Multipart, Entries, SaveResult};
+use multipart_any::mock::StdoutTee;
 use tiny_http::{Response, StatusCode, Request};
 fn main() {
     // Starting a server on `localhost:80`

@@ -1,13 +1,13 @@
 extern crate hyper;
-extern crate multipart;
+extern crate multipart_any;
 
 use std::io;
 use hyper::server::{Handler, Server, Request, Response};
 use hyper::status::StatusCode;
 use hyper::server::response::Response as HyperResponse;
-use multipart::server::hyper::{Switch, MultipartHandler, HyperRequest};
-use multipart::server::{Multipart, Entries, SaveResult};
-use multipart::mock::StdoutTee;
+use multipart_any::server::hyper::{Switch, MultipartHandler, HyperRequest};
+use multipart_any::server::{Multipart, Entries, SaveResult};
+use multipart_any::mock::StdoutTee;
 
 struct NonMultipart;
 impl Handler for NonMultipart {
