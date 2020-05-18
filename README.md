@@ -1,6 +1,27 @@
-Forked from [Multipart](https://crates.io/crates/multipart).
+# Forked from [Multipart](https://crates.io/crates/multipart).
 
-For parse any multipart/* type stream.
+* for parse any `multipart/*` content-type stream.
+* update mime, mime_guess crates.
+* fix compiler warnings.
+
+## Motivation
+
+I want to parse `multipart/x-mixed-replace` (a.k.a. Motion JPEG) movie file response body from WebCam.
+So, this parser does not throw an exception if not found `Content-Disposition` header in multipart headers.
+
+Just like this:
+
+```
+Content-Type: multipart/x-mixed-replace; boundary=myboundary
+
+--myboundary
+Content-Type: image/jpeg
+Content-Length: 272922
+
+JPEG binary data here...
+```
+
+----
 
 # Multipart [![On Crates.io](https://img.shields.io/crates/v/multipart-any.svg)](https://crates.io/crates/multipart-any)
 

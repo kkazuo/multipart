@@ -9,7 +9,7 @@ description = "A backend-agnostic extension for HTTP libraries that provides sup
 
 keywords = ["form-data", "hyper", "iron", "http", "upload"]
 
-repository = "https://github.com/kkazuo/multipart"
+repository = "https://github.com/kkazuo/multipart-any"
 
 documentation = "http://docs.rs/multipart-any/"
 
