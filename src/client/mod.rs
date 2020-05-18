@@ -227,7 +227,7 @@ impl<'a, W: Write> MultipartWriter<'a, W> {
 
     fn write_stream<S: Read>(&mut self, stream: &mut S, name: &str, filename: Option<&str>, content_type: Option<Mime>) -> io::Result<()> {
         // This is necessary to make sure it is interpreted as a file on the server end.
-        let content_type = Some(content_type.unwrap_or_else(::mime_guess::octet_stream));
+        let content_type = Some(content_type.unwrap_or(mime::APPLICATION_OCTET_STREAM));
 
         chain_result! {
             self.write_field_headers(name, filename, content_type),
@@ -265,7 +265,7 @@ impl<'a, W: Write> MultipartWriter<'a, W> {
 }
 
 fn mime_filename(path: &Path) -> (Mime, Option<&str>) {
-    let content_type = ::mime_guess::guess_mime_type(path);
+    let content_type = ::mime_guess::from_path(path).first_or_octet_stream();
     let filename = opt_filename(path);
     (content_type, filename)
 }

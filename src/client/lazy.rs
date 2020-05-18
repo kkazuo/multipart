@@ -159,7 +159,7 @@ impl<'n, 'd> Multipart<'n, 'd> {
             Field {
                 name: name.into(),
                 data: Data::Stream(Stream {
-                    content_type: mime.unwrap_or_else(::mime_guess::octet_stream),
+                    content_type: mime.unwrap_or(mime::APPLICATION_OCTET_STREAM),
                     filename: filename.map(|f| f.into()),
                     stream: Box::new(stream)
                 }),
